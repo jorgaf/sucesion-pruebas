@@ -1,0 +1,27 @@
+{
+  "name": "Sucesión con pruebas · Java 27",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "27",
+      "jdkDistro": "tem",
+      "installMaven": "true"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "postCreateCommand": "mvn -B -q dependency:go-offline || true",
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["README.md", "src/test/java/fp/SucesionTest.java"]
+    },
+    "vscode": {
+      "extensions": ["vscjava.vscode-java-pack"],
+      "settings": {
+        "files.encoding": "utf8"
+      }
+    }
+  }
+}
